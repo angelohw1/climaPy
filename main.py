@@ -1,8 +1,8 @@
 import openpyxl as ox
-
+from analisis import mostrar_mayor_temperatura, mostrar_menor_temperatura, mostrar_velocidad_viento
 from api_client import get_weather, get_ciudad, get_pais, get_coordenadas, get_weatherDetail
 
-import pandas as pd
+
 from translate import Translator
 
 traductor = Translator(to_lang="en")
@@ -81,6 +81,16 @@ def mostrarMenu():
     print("10- Salir")
 
 def mostrarTemperaturaActual():
+    ## Pides el pais y  la ciudad
+
+    ##comprobar que el pais y la ciudad existan en la tabla, que sean concididnes una misma fila
+
+    # mostrar el pais con con su ciudad, toda su fila, guardar en variable
+
+
+
+
+
     pais = input("Introduce un país: ")
     pais = pais.capitalize()
 
@@ -198,11 +208,11 @@ while not salir:
        elif opcionMenu == 6:
            pass
        elif opcionMenu == 7:
-           pass
+           mostrar_mayor_temperatura()
        elif opcionMenu == 8:
-           pass
+           mostrar_menor_temperatura()
        elif opcionMenu == 9:
-           pass
+           mostrar_velocidad_viento()
        elif opcionMenu == 10:
            print("Fin del programa")
            salir = True
