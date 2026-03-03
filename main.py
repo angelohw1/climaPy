@@ -1,8 +1,9 @@
 import openpyxl as ox
-from openpyxl import load_workbook
-
+import analisis
 from api_client import get_weather, get_ciudad, get_pais, get_coordenadas, get_weatherDetail
 import pandas as pd
+
+
 from translate import Translator
 
 
@@ -11,6 +12,7 @@ traductorEspañol = Translator(to_lang="es")
 
 
 def dia_o_noche(parametro):
+
     if parametro == 1:
         actual = "dia"
     else:
@@ -82,12 +84,11 @@ def mostrarMenu():
     print("9-- Mostrar Velocidad del viento")
     print("10- Salir")
 
-
 def mostrarTemperaturaActual():
     pais = input("Introduce un país: ")
     pais = pais.capitalize()
 
-    pais = traductorIngles.translate(pais)
+    pais = traductor.translate(pais)
     pais = pais.strip()
     print(pais)
 
@@ -129,14 +130,13 @@ def mostrarTemperaturaActual():
 
 
 def añadirTiempoClimatico():
+
     filaDatos = []
     pais = input("Introduce un país: ")
-    pais = pais.lower()
+    pais = pais.capitalize()
+
+    pais = traductor.translate(pais)
     pais = pais.strip()
-    pais  = traductorIngles.translate(pais)
-
-    comprobarSiExiste(pais)
-
     print(pais)
 
     while not get_pais(pais):
