@@ -75,7 +75,6 @@ def get_pais(pais):
 
 def get_coordenadas(ciudad,pais):
 
-
     lat = None
     lon = None
     url = "https://geocoding-api.open-meteo.com/v1/search?name="
@@ -96,3 +95,4 @@ def get_coordenadas(ciudad,pais):
 
     print(pais)
     return lat, lon
+

@@ -265,7 +265,7 @@ while not salir:
         elif opcionMenu == 3:
             eliminarTiempoClimático()
         elif opcionMenu == 4:
-            pass
+            get_altitud()
         elif opcionMenu == 5:
             filtrar_por_ciudad()
         elif opcionMenu == 6:

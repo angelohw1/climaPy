@@ -105,4 +105,19 @@ def filtrar_por_pais():
             print("No se encontraron datos para ese país.")
 
     else:
+
         print("No hay datos disponibles.")
+
+
+def get_altitud():
+
+   df =  cargar_datos()
+
+   if df is not None and not df.empty:
+    print(df[["Country", "City", "Elevation"]].to_string(index=False))
+   else:
+       print("No hay datos disponibles.")
+
+
+
+
