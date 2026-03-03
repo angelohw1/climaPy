@@ -1,5 +1,7 @@
 import openpyxl as ox
-import analisis
+from openpyxl import load_workbook
+
+from analisis import *
 from api_client import get_weather, get_ciudad, get_pais, get_coordenadas, get_weatherDetail
 import pandas as pd
 
@@ -88,7 +90,8 @@ def mostrarTemperaturaActual():
     pais = input("Introduce un país: ")
     pais = pais.capitalize()
 
-    pais = traductor.translate(pais)
+    pais = traductorIngles.translate(pais)
+    pais = pais.lower()
     pais = pais.strip()
     print(pais)
 
@@ -133,10 +136,10 @@ def añadirTiempoClimatico():
 
     filaDatos = []
     pais = input("Introduce un país: ")
-    pais = pais.capitalize()
 
-    pais = traductor.translate(pais)
+    pais = traductorIngles.translate(pais)
     pais = pais.strip()
+    pais = pais.lower()
     print(pais)
 
     while not get_pais(pais):
@@ -151,14 +154,15 @@ def añadirTiempoClimatico():
     ciudad = input("Introduce una ciudad: ")
     ciudad = ciudad.lower()
     ciudad = ciudad.strip()
-    ciudad = traductorIngles.translate(ciudad)
+
 
     while not get_ciudad(ciudad):
         print("La ciudad  introducida no existe ")
         ciudad = input("Por favor introduzca una ciudad correcta: ")
         ciudad = ciudad.lower()
         ciudad = ciudad.strip()
-        ciudad = traductorIngles.translate(ciudad)
+
+
 
 
 
@@ -181,9 +185,16 @@ def añadirTiempoClimatico():
 
     filaDatos.append(estadoTiempo(weather["weathercode"]))  # Añadimos el estado del tiempo
 
-    add_rows(filaDatos)
 
-    print("-------------------TIEMPO CLIMÁTICO REGISTRADO CORRECTAMENTE--------------")
+    if comprobarSiExiste(pais,ciudad):
+        print("----------------------------EL TIEMPO CLIMÁTICO REGISTRADO YA EXISTE-------------------")
+
+    else:
+
+      add_rows(filaDatos)
+      print("-------------------TIEMPO CLIMÁTICO REGISTRADO CORRECTAMENTE--------------")
+
+
 
 
 def eliminarTiempoClimático():
@@ -248,7 +259,7 @@ while not salir:
         opcionMenu = int(opcionMenu)
 
         if opcionMenu == 1:
-            pass
+            mostrar_toda_tabla()
         elif opcionMenu == 2:
             añadirTiempoClimatico()
         elif opcionMenu == 3:
@@ -256,15 +267,15 @@ while not salir:
         elif opcionMenu == 4:
             pass
         elif opcionMenu == 5:
-            pass
+            filtrar_por_ciudad()
         elif opcionMenu == 6:
-            pass
+            filtrar_por_pais()
         elif opcionMenu == 7:
-            pass
+            mostrar_mayor_temperatura()
         elif opcionMenu == 8:
-            pass
+            mostrar_menor_temperatura()
         elif opcionMenu == 9:
-            pass
+            mostrar_velocidad_viento()
         elif opcionMenu == 10:
             print("Fin del programa")
             salir = True
