@@ -100,7 +100,39 @@ Mostrar error  Conectar con API
 
 
 
-
+INICIO
+   ↓
+Mostrar menú principal
+   ↓
+Seleccionar opción
+   ↓
+¿Opción 1 (Insertar registro)?
+   ↓                ↓
+   NO               SÍ
+   ↓                ↓
+Ir a otra opción   Solicitar país y ciudad
+                     ↓
+             ¿Datos válidos?
+               ↓         ↓
+              NO         SÍ
+               ↓          ↓
+        Mostrar error   Llamar API geolocalización
+                          ↓
+                  Obtener latitud y longitud
+                          ↓
+                  Llamar API meteorológica
+                          ↓
+                 ¿Datos encontrados?
+                   ↓         ↓
+                  NO         SÍ
+                   ↓          ↓
+             Mostrar error   Procesar datos
+                               ↓
+                         Guardar en Excel
+                               ↓
+                        Generar gráfico
+                               ↓
+                              FIN
 
 
 
