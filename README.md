@@ -38,7 +38,7 @@ Para ello usaremos la librería Plotty
 Las funciones principales de la aplicación es proporcionar al usuario información sobre el clima en tiempo real de un país y de una ciudad que se van a especificar a traves de una interfaz gráfica,en las que este
 puede consultar el tiempo en grados Celsius Cº, la altitud, la velocidad del viento, la dirección del viento y el estado en el que se encuentra.
 
-🌡️ Información mostrada:
+** 🌡️ Información mostrada: **
 
 🌡️ Temperatura en grados Celsius Cº
 
