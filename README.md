@@ -71,34 +71,33 @@ La tercera clase  llamada Analisis: sirve para filtrar los datos que el usuario 
 
 A continuación se muestra un esquema visual de como quedaría la aplicación en cada llamada:
 
-## 📊 Diagrama de Flujo
 
 ```
-INICIO
-   ↓
-Mostrar mensaje de bienvenida
-   ↓
-Solicitar país y ciudad
-   ↓
-¿Datos válidos?
-   ↓           ↓
-  NO           SÍ
-   ↓           ↓
-Mostrar error  Conectar con API
-               ↓
-        ¿Respuesta correcta?
-               ↓         ↓
-              NO         SÍ
-               ↓          ↓
-        Mostrar error   Procesar datos
-                          ↓
-                    Mostrar información
-                          ↓
-                   Guardar en historial
-                          ↓
-                   Generar gráfico
-                          ↓
-                         FIN
+                                                                               INICIO
+                                                                                  ↓
+                                                                               Mostrar mensaje de bienvenida
+                                                                                  ↓
+                                                                               Solicitar país y ciudad
+                                                                                  ↓
+                                                                               ¿Datos válidos?
+                                                                                  ↓           ↓
+                                                                                 NO           SÍ
+                                                                                  ↓           ↓
+                                                                               Mostrar error  Conectar con API
+                                                                                              ↓
+                                                                                       ¿Respuesta correcta?
+                                                                                              ↓         ↓
+                                                                                             NO         SÍ
+                                                                                              ↓          ↓
+                                                                                       Mostrar error   Procesar datos
+                                                                                                         ↓
+                                                                                                   Mostrar información
+                                                                                                         ↓
+                                                                                                  Guardar en historial
+                                                                                                         ↓
+                                                                                                  Generar gráfico
+                                                                                                         ↓
+                                                                                                        FIN
 ```
 
 
