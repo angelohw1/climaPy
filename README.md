@@ -1,4 +1,4 @@
-🌦️ Diseño del proyecto
+## 🌦️ Diseño del proyecto
 📊 Analizador Climático – ClimaPy
 
 ClimaPy es una aplicación desarrollada en Python que permite consultar y analizar información meteorológica de cualquier ciudad, especificando también su país,. Obtiene datos climáticos en tiempo
@@ -10,17 +10,8 @@ real de una fuente confiable en Internet"clima" para que los usuarios puedan ver
 
 📊 Genera graficos para su facil comprension.
 
-📝 Hacer el diseño del proyecto
 
-📘 Breve documentación no técnica
-
-🔄 Diagrama de flujo
-
-🎯 Objetivos que se quieren conseguir
-
-🏗️ Estructura del proyecto, con la funcionalidad principal comenzada
-
-🎯 Objetivos que se quieren conseguir
+## 🎯 Objetivos que se quieren conseguir
 
 El usuario tendrá que introducir los datos mediante la consola, introduciendo el país y la ciudad,
 
@@ -42,7 +33,7 @@ los distintos cambios climáticos en distintas ciudades y países del mundo
 
 Para ello usaremos la librería Plotty
 
-🏗️ Estrucutra del proyecto y funcionalidad principal
+## 🏗️ Estrucutra del proyecto y funcionalidad principal
 
 Las funciones principales de la aplicación es proporcionar al usuario información sobre el clima en tiempo real de un país y de una ciudad que se van a especificar a traves de una interfaz gráfica,en las que este
 puede consultar el tiempo en grados Celsius Cº, la altitud, la velocidad del viento, la dirección del viento y el estado en el que se encuentra.
