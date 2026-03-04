@@ -169,8 +169,16 @@ def añadirTiempoClimatico():
     filaDatos.append((ciudad.capitalize()))  # Añadimos ciudad
 
     latitud, longitud = get_coordenadas(ciudad, pais)
+    if latitud is None or longitud is None:
+        print("No se encontraron coordenadas para esa ciudad.")
+        return
 
     weather = get_weather(latitud, longitud)
+
+    if weather is None:
+        print("No se pudo obtener el clima.")
+        return
+    
     weather_detail = get_weatherDetail(latitud, longitud)
 
     filaDatos.append(weather["temperature"])

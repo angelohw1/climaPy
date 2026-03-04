@@ -4,6 +4,11 @@ from translate import Translator
 traductor = Translator(to_lang="en")
 
 def get_weather(lat, lon):
+
+    if lat is None or lon is None:
+        print("Coordenadas inválidas")
+        return None
+
     url = "https://api.open-meteo.com/v1/forecast"
 
     params = {
@@ -13,7 +18,20 @@ def get_weather(lat, lon):
     }
 
     response = requests.get(url, params=params)
-    data = response.json()
+
+    if response.status_code != 200:
+        print("Error API:", response.status_code)
+        return None
+
+    try:
+        data = response.json()
+    except:
+        print("Error al convertir JSON")
+        return None
+
+    if "current_weather" not in data:
+        print("No hay datos de clima")
+        return None
 
     return data["current_weather"]
 
@@ -73,26 +91,33 @@ def get_pais(pais):
 
     return paisCorrecto
 
-def get_coordenadas(ciudad,pais):
+def get_coordenadas(ciudad, pais):
 
-    lat = None
-    lon = None
-    url = "https://geocoding-api.open-meteo.com/v1/search?name="
+    url = "https://geocoding-api.open-meteo.com/v1/search"
 
-    response = requests.get(url + ciudad)
+    params = {
+        "name": ciudad,
+        "count": 10
+    }
 
-    data = response.json()
+    response = requests.get(url, params=params)
+
+    if response.status_code != 200:
+        print("Error en geocoding:", response.status_code)
+        return None, None
+
+    try:
+        data = response.json()
+    except:
+        print("Error al decodificar JSON")
+        return None, None
 
     if "results" not in data:
-        return None
+        return None, None
 
-        # Buscar coincidencia exacta
     for resultado in data["results"]:
-        if  resultado["name"].lower()== ciudad.lower() and resultado["country"].lower()==(pais.lower()):
+        if resultado["name"].lower() == ciudad.lower():
 
-           lat = resultado["latitude"]
-           lon = resultado["longitude"]
+            return resultado["latitude"], resultado["longitude"]
 
-    print(pais)
-    return lat, lon
-
+    return None, None
