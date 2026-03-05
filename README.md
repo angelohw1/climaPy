@@ -103,7 +103,7 @@ Además podrá consultar:
 ## 🧩 Clases del proyecto
 
 
-![introducirDatos](imagenesGithub/Estructuraproyecto.png)
+![introducirDatos](imagenesGithub/estructuraProyecto.png)
 
 
 
