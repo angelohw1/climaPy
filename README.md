@@ -102,7 +102,10 @@ Además podrá consultar:
 
 ## 🧩 Clases del proyecto
 
-![introducirDatos]( imagenesGithub/Estructura proyecto.png)
+
+![introducirDatos](imagenesGithub/Estructuraproyecto.png)
+
+
 
 Se contará con tres clases principales:
 
