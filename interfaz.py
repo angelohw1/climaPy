@@ -107,10 +107,11 @@ def mostrar_tabla_completa_grafica():
     fig.add_trace(go.Bar(
         x=df["Lugar"],
         y=df["Temperature"],
-        name="Temperatura Cª"
+        name="Temperatura °C",
+        offsetgroup=1  # Grupo 1
     ))
 
-
+    # 2. Viento
     fig.add_trace(go.Bar(
         x=df["Lugar"],
         y=df["Windspeed"],
@@ -118,12 +119,13 @@ def mostrar_tabla_completa_grafica():
         offsetgroup=2  # Grupo 2
     ))
 
+    # 3. Altitud (Eje derecho)
     fig.add_trace(go.Bar(
         x=df["Lugar"],
         y=df["Elevation"],
         name="Altitud",
         yaxis="y2",
-        offsetgroup=3
+        offsetgroup=3  # Grupo 3 ⭐ Esto es lo que evita que se solapen
     ))
 
     fig.update_layout(
@@ -134,11 +136,11 @@ def mostrar_tabla_completa_grafica():
             title="Altitud",
             overlaying="y",
             side="right"
-        ),
 
+        ),
+        # Cambiamos barmode a 'group'
         barmode="group",
         legend_title="Series de Datos"
     )
 
     fig.show()
-
