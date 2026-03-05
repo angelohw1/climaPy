@@ -36,7 +36,7 @@ El resto de opciones (excepto la 10) usarán Pandas para filtrar datos.
 
 Los datos filtrados se usarán para construir gráficos con Plotly para comparar cambios climáticos.
 
-##🏗️ Estructura y funcionalidad principal
+## 🏗️ Estructura y funcionalidad principal
 
 Las funciones principales de la aplicación permiten al usuario obtener información del clima en tiempo real de un país y ciudad mediante una interfaz gráfica o consola.
 
