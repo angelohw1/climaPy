@@ -104,6 +104,9 @@ La clase Analisis sirve para filtrar los datos que el usuario desea obtener, per
 
 Esta clase Interfaz sirve para procesar los datos que se han almacenado en excel, y generar gráficos con ellos
 
+
+## 📰 Diagrama de Flujoz
+
 ```
 INICIO
    ↓
