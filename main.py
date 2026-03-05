@@ -4,7 +4,7 @@ from openpyxl import load_workbook
 from analisis import *
 from api_client import get_weather, get_ciudad, get_pais, get_coordenadas, get_weatherDetail
 from translate import Translator
-from interfaz import mostrar_pie_chart, mostrar_overview
+from interfaz import *
 
 traductorIngles = Translator(to_lang="en")
 traductorEspañol = Translator(to_lang="es")
@@ -122,7 +122,7 @@ def añadirTiempoClimatico():
 
 def mostrarMenu():
     print("\n-------- MENÚ --------")
-    print("1-- Mostrar tabla completa (modo texto)")
+    print("1-- Mostrar todos los tiempos ")
     print("2-- Añadir tiempo climático")
     print("3-- Eliminar tiempo climático")
     print("4-- Mostrar altitud")
@@ -148,7 +148,7 @@ while not salir:
         continue
 
     if opcionMenu == 1:
-        mostrar_toda_tabla()
+      mostrar_tabla_completa_grafica()
 
     elif opcionMenu == 2:
         añadirTiempoClimatico()
