@@ -31,6 +31,9 @@ Con estas coordenadas se obtendrá información del clima en tiempo real.
 
 Los datos obtenidos se almacenarán en un archivo Excel, que actuará como base de datos con columnas para la información climática.
 
+En nuestro caso hemos elegido **Excel**
+![introducirDatos](imagenesGithub/baseDeDatosExcel.png)
+
 El menú principal contará con 10 opciones:
 
 ![introducirDatos](imagenesGithub/menu.png)
@@ -98,6 +101,8 @@ Además podrá consultar:
 **🌪️ Máxima velocidad del viento**
 
 ## 🧩 Clases del proyecto
+
+![introducirDatos]( imagenesGithub/Estructura proyecto.png)
 
 Se contará con tres clases principales:
 
